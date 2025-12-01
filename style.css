@@ -1,141 +1,1745 @@
-/* =========== BASE =========== */
-:root{
-  --purple:#331694;
-  --green:#73DBB8;
-  --bg:#ffffff;
-  --card-gradient: linear-gradient(180deg,#50997d,#73dbb3);
-  --max-width:1200px;
+/* Fontes */
+
+/* Coolvetica */
+
+@font-face {
+    font-family: "Coolvetica-bold";
+    src: url(Tipografia/CoolveticaRg.otf);
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{font-family: "Calibri-regular", system-ui, -apple-system, "Segoe UI", Roboto, Arial; background:var(--bg); scroll-behavior:smooth}
-img{max-width:100%;height:auto;display:block}
-
-/* =========== HEADER =========== */
-.site-header{
-  width:100%;
-  background:transparent;
-  position:sticky;
-  top:0;
-  z-index:60;
-  backdrop-filter: blur(4px);
-}
-.header-inner{
-  max-width:var(--max-width);
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  padding:12px 20px;
-}
-.brand img{height:64px; width:auto}
-
-/* nav */
-.main-nav{
-  display:flex;
-  gap:28px;
-  align-items:center;
-}
-.main-nav a{color:var(--purple); text-decoration:none; font-weight:600; font-size:clamp(14px,1.6vw,18px)}
-.main-nav a.latencia{color:var(--green)}
-
-/* hamburger (mobile) */
-#nav-toggle{
-  display:none;
-  background:none;border:0;width:44px;height:44px;cursor:pointer;
-}
-#nav-toggle .burger{
-  display:block;width:24px;height:2px;background:var(--purple);position:relative;
-}
-#nav-toggle .burger::after,#nav-toggle .burger::before{content:"";position:absolute;left:0;width:24px;height:2px;background:var(--purple)}
-#nav-toggle .burger::before{top:-7px} 
-#nav-toggle .burger::after{top:7px}
-
-/* =========== CARROSSEL =========== */
-.carousel{width:100%;background:#eee;padding:20px 0}
-.slides-wrapper{max-width:var(--max-width);margin:0 auto;overflow:hidden;border-radius:12px}
-.slides{display:flex;width:400%;transition:transform .6s ease}
-.slide{width:25%;flex-shrink:0}
-.slide img{width:100%;height:360px;object-fit:cover}
-
-/* dots */
-.carousel-nav{display:flex;gap:10px;justify-content:center;padding:12px 0}
-.dot{width:12px;height:12px;border-radius:50%;background:#fff;opacity:.6;border:2px solid rgba(0,0,0,.06);cursor:pointer}
-.dot.active{opacity:1;transform:scale(1.05)}
-
-/* =========== SOBRE =========== */
-.sobre{padding:40px 0}
-.sobre-container{max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:center}
-.sobre-texto h2{font-family:"Coolvetica-cond";font-size:clamp(36px,6vw,96px);color:var(--purple);margin-bottom:12px}
-.sobre-texto p{font-size:clamp(16px,2.2vw,36px);color:var(--purple);line-height:1.35}
-
-/* =========== CASES INICIAIS =========== */
-.cases-iniciais{padding:40px 0}
-.case-grid{max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-.card-large{position:relative;padding:24px;border-radius:12px;color:#fff;min-height:300px;display:flex;flex-direction:column;justify-content:end}
-.card-large .hover-text{position:absolute;left:0;right:0;bottom:0;padding:12px;background:rgba(0,0,0,.45);opacity:0;transform:translateY(20px);transition:.25s}
-.card-large:hover .hover-text{opacity:1;transform:translateY(0)}
-
-/* =========== AVALIAÇÃO =========== */
-.avaliacao{padding:30px 0}
-.avaliacao h2{text-align:center;font-size:clamp(28px,5vw,96px);color:var(--purple);margin-bottom:18px}
-.dados{max-width:var(--max-width);margin:0 auto;display:flex;gap:18px;justify-content:space-around;flex-wrap:wrap}
-.dados-item{background:rgba(0,0,0,.03);padding:18px;border-radius:14px;text-align:center;min-width:160px}
-
-/* =========== CARDS (flip) =========== */
-.container-cards2{max-width:var(--max-width);margin:0 auto;display:flex;gap:28px;justify-content:center;flex-wrap:wrap}
-.card-container{width:360px;height:520px;perspective:1200px}
-.card{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .8s;cursor:pointer}
-.card.flipped{transform:rotateY(180deg)}
-.card-front,.card-back{position:absolute;inset:0;border-radius:12px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
-.card-front{background:var(--card-gradient);color:#fff}
-.card-back{background:var(--purple);color:#fff;transform:rotateY(180deg);text-align:left;align-items:flex-start}
-.card-back h2{color:var(--green);font-size:clamp(20px,3vw,36px);margin-bottom:12px}
-.card-back .dot{width:12px;height:12px;border-radius:50%;background:#fff;margin-right:10px}
-
-/* buttons */
-.btn-fale{display:inline-block;margin-top:auto;background:var(--green);color:var(--purple);padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
-
-/* =========== CONTATO =========== */
-.contato{padding:50px 0}
-.contato h2{text-align:center;font-size:clamp(28px,5vw,96px);color:#210F59;margin-bottom:22px}
-.campo{max-width:900px;margin:0 auto;background:#210F59;color:#fff;padding:28px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.whatsapp-btn{background:var(--green);border:0;padding:12px 18px;border-radius:14px;cursor:pointer}
-
-/* =========== FOOTER =========== */
-footer{background:#210F59;color:#fff;padding:36px 0}
-.footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.icones-redes{display:flex;gap:12px;align-items:center}
-
-/* =========== CHAT (pequenos ajustes) =========== */
-/* Mantive o CSS do chatbot do seu arquivo original (seção longa — preservada) */
-/* ... (você pode manter a seção original do CSS do chatbot como estava) */
-
-/* =========== MEDIA QUERIES =========== */
-@media (max-width:1024px){
-  .case-grid{grid-template-columns:1fr}
-  .slides img{height:300px}
-  .card-container{width:320px;height:480px}
+@font-face {
+    font-family: "Coolvetica-bold-italic";
+    src: url(Tipografia/CoolveticaRgIt.otf);
 }
 
-@media (max-width:768px){
-  #nav-toggle{display:block}
-  .main-nav{position:fixed;top:76px;right:16px;background:rgba(255,255,255,0.98);flex-direction:column;padding:16px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:none}
-  .main-nav.show{display:flex}
-  .slides img{height:220px}
-  .sobre-container{grid-template-columns:1fr;gap:18px}
-  .card-container{width:280px;height:420px}
-  .card-large{min-height:220px}
-  .icones-redes{flex-direction:row;flex-wrap:wrap}
+@font-face {
+    font-family: "Coolvetica-cond";
+    src: url(Tipografia/CoolveticaRgCond.otf);
 }
 
-@media (max-width:480px){
-  .header-inner{padding:10px}
-  .brand img{height:48px}
-  .slides img{height:180px}
-  .card-container{width:240px;height:380px}
-  .card-back h2{font-size:20px}
-  .sobre-texto h2{font-size:40px}
-  .campo{flex-direction:column;align-items:center;text-align:center}
+/* Calibri */
+
+@font-face {
+    font-family: "Calibri-regular";
+    src: url(Tipografia/calibri-regular.ttf);
+}
+
+@font-face {
+    font-family: "Calibri-italic";
+    src: url(Tipografia/calibri-italic.ttf);
+}
+
+@font-face {
+    font-family: "Calibri-bold";
+    src: url(Tipografia/calibri-bold.ttf);
+}
+
+@font-face {
+    font-family: "Calibri-bold-italic";
+    src: url(Tipografia/calibri-bold-italic.ttf);
+}
+
+/* Começo do codigo */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Menu */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+/* ===========================
+         Header
+=========================== */
+
+.menu {
+    font-family: "Calibri-regular";
+    font-size: 40px;
+   
+    justify-content: center;
+    
+    width: 95%;
+
+   
+    margin-bottom: 40px;
+    height: 80px;
+}
+
+.menu img {
+    height: 80px;
+
+    margin-top: 15px;
+    margin-left: 140px;
+}
+
+header .container-grid {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.secao {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 100px;
+    margin-top: 40px;
+    gap: 250px;
+}
+
+nav a {
+    color: #331694;
+
+    cursor: pointer;
+
+    text-decoration: none;
+}
+
+.latência a {
+    color: #73dbb8;
+
+    cursor: pointer;
+
+    text-decoration: none;
+}
+
+.secao a:hover {
+    color: #73dbb8;
+    transform: scale(1.05);
+
+    text-decoration: none;
+}
+
+.latência a:hover {
+    color: #331694;
+    transform: scale(1.05);
+
+    text-decoration: none;
+}
+
+/* ===========================
+         Banner
+=========================== */
+
+.carousel {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.carousel input {
+    display: none;
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: all 0.6s ease;
+}
+
+/* Descomente esta parte para corrigir o layout */
+.slide {
+    width: 25%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Movimentação dos slides */
+#slide1:checked~.slides {
+    transform: translateX(0);
+}
+
+#slide2:checked~.slides {
+    transform: translateX(-25%);
+}
+
+#slide3:checked~.slides {
+    transform: translateX(-50%);
+}
+
+#slide4:checked~.slides {
+    transform: translateX(-75%);
+}
+
+/* Navegação (bolinhas) */
+.navigation {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+
+}
+
+.bar {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.bar:hover {
+    opacity: 1;
+}
+
+/* ===========================
+         Sobre
+=========================== */
+
+.sobre {
+    padding: 10px 0;
+    background: #ffffff;
+    display: flex;
+    justify-content: start;
+}
+
+.sobre-container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 60px;
+}
+
+/* BOLINHAS */
+.bolas {
+    width: 100%;
+    height: 350px;
+}
+
+/* TEXTO */
+.sobre-texto h2 {
+    font-family: "Coolvetica-cond";
+    font-size: 96px;
+    color: #331694;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.sobre-texto p {
+    font-family: "Calibri-regular";
+    font-size: 36px;
+    color: #331694;
+}
+
+.sobre-texto strong {
+    font-family: "Calibri-italic";
+    font-weight: 700;
+}
+
+/* Cases-iniciais */
+
+#cases-iniciais {
+    text-align: center;
+    margin-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: 50px;
+}
+
+.container-cards {
+    display: flex;
+    justify-content: center;
+    /* Usar center para melhor alinhamento */
+    gap: 200px;
+    /* Espaço entre os cards */
+    flex-wrap: wrap;
+}
+
+.qualidade {
+    height: 690px;
+    width: 415px;
+
+    background-image: linear-gradient(to bottom, #50997d, #56a587, #5cb090, #63bc9a, #69c8a4, #6ccea9, #6fd3ad, #72d9b2, #72dab2, #73dab3, #73dbb3, #73dbb3);
+    border-radius: 10px;
+
+}
+
+.qualidade svg {
+    margin-top: 200px;
+}
+
+.confiança {
+    height: 690px;
+    width: 415px;
+
+    background-image: linear-gradient(to bottom, #50997d, #56a587, #5cb090, #63bc9a, #69c8a4, #6ccea9, #6fd3ad, #72d9b2, #72dab2, #73dab3, #73dbb3, #73dbb3);
+    border-radius: 10px
+}
+
+.confiança svg {
+    margin-top: 200px;
+}
+
+.container-cards h1 {
+    font-family: "Coolvetica-cond";
+    font-size: 60px;
+
+    color: #331694;
+}
+
+#cases-iniciais svg {
+    color: #331694;
+}
+
+/* ANIMAÇÃO DE HOVER NOS CARDS "QUALIDADE" E "CONFIANÇA" */
+
+/* Aplica a todos os cards dentro do container */
+.container-cards>div {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease;
+    cursor: pointer;
+}
+
+/* Aumenta o card no hover */
+.container-cards>div:hover {
+    transform: scale(1.06);
+}
+
+/* Texto escondido inicialmente */
+.hover-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 18px;
+    background: #331694;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    font-family: "Calibri-regular";
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.35s ease;
+}
+
+/* Aparece quando passa o mouse */
+.container-cards>div:hover .hover-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* <!-- Avaliações & conexões --> */
+
+#avaliação {
+    text-align: center;
+
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+
+.dados {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-around;
+
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+#avaliação h2 {
+    font-family: "Coolvetica-cond";
+    font-size: 96px;
+
+    color: #331694;
+
+    margin-bottom: 100px;
+}
+
+
+.dados h1 {
+    font-family: "Coolvetica-cond";
+    font-size: 64px;
+
+    color: #331694;
+}
+
+.dados p {
+    font-family: "Calibri-bold";
+    font-size: 36px;
+
+    color: #210F59;
+}
+
+.protegidos p {
+    margin-left: 10px;
+}
+
+#avaliação .dados {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+#avaliação .dados>div {
+    background-color: #ffffff10;
+    /* leve fundo */
+    padding: 25px 35px;
+    border-radius: 20px;
+    transition: .3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+#avaliação .dados>div:hover {
+    transform: translateY(-10px) scale(1.05);
+    background-color: #ffffff20;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+#avaliação .dados>div h1 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+    transition: .3s;
+}
+
+#avaliação .dados>div:hover h1 {
+    color: #73DBB8;
+    transform: scale(1.08);
+}
+
+/* banner nossos serviços */
+
+#banner-serviços .container-cards img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+
+/* cards serviço */
+
+/* Estilos que você já tem (com pequenos ajustes ) */
+#cases-serviços {
+    text-align: center;
+    margin-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: 50px;
+}
+
+.container-cards2 {
+    display: flex;
+    justify-content: center;
+    /* Usar center para melhor alinhamento */
+    gap: 200px;
+    /* Espaço entre os cards */
+    flex-wrap: wrap;
+    /* Permite que os cards quebrem a linha em telas menores */
+}
+
+#cases-serviços .saber p {
+    font-family: "Coolvetica-cond";
+    font-size: 40px;
+    color: #331694;
+
+    text-align: center;
+    margin-top: 40px;
+}
+
+.container-cards2 p {
+    font-family: "Coolvetica-cond";
+    font-size: 60px;
+    color: #331694;
+}
+
+#cases-serviços svg {
+    color: #331694;
+}
+
+/* --- NOVOS ESTILOS PARA O EFEITO FLIP --- */
+
+/* Contêiner que define a perspectiva 3D */
+.card-container {
+    width: 415px;
+    height: 690px;
+    perspective: 1500px;
+    /* Efeito de profundidade */
+}
+
+/* O card que vai girar */
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo da frente (herda de .internet e .cloud) */
+.card-front {
+    background-image: linear-gradient(to bottom, #50997d, #56a587, #5cb090, #63bc9a, #69c8a4, #6ccea9, #6fd3ad, #72d9b2, #72dab2, #73dab3, #73dbb3, #73dbb3);
+}
+
+/* Estilo do verso */
+.card-back {
+    background-color: #331694;
+    /* Cor de fundo roxa */
+    color: white;
+    transform: rotateY(180deg);
+    /* O verso começa já virado */
+    padding: 40px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Estilos para o conteúdo do verso (baseado na sua imagem) */
+.card-back h2 {
+    font-family: "Coolvetica-cond";
+    font-size: 60px;
+    color: #69c8a4;
+    /* Cor verde do título */
+    margin-bottom: 30px;
+}
+
+.card-back ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-back li {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+    /* Alinha o 'dot' com o topo do texto */
+}
+
+.card-back .dot {
+    min-width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-top: 8px;
+    /* Ajuste fino para alinhar verticalmente com o título */
+}
+
+/* O contêiner para o texto */
+.card-back .text-content {
+    display: flex;
+    flex-direction: column;
+    /* Garante que o H3 e o P fiquem um sobre o outro */
+}
+
+.card-back h3 {
+    font-family: "Coolvetica-cond";
+    font-size: 30px;
+    margin: 0 0 5px 0;
+    /* Remove margem extra */
+    font-weight: bold;
+    /* Deixa o título em negrito */
+}
+
+.card-back p {
+    font-family: "Calibri-regular";
+    font-size: 20px;
+    margin: 0;
+    /* Remove margem extra */
+    color: #e0e0e0;
+    line-height: 1.4;
+}
+
+.card-container .card-back button {
+    background-color: #69c8a4;
+    color: #331694;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: auto;
+    /* Empurra o botão para o final do card */
+    align-self: center;
+}
+
+.card-container .card-back a {
+    background-color: #69c8a4;
+    color: #331694;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: auto;
+    /* Empurra o botão para o final do card */
+    align-self: center;
+}
+
+/* Contato */
+
+#contato {
+    text-align: center;
+
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+
+#contato h2 {
+    font-family: "Coolvetica-cond";
+    font-size: 96px;
+
+    color: #210F59;
+
+    margin-bottom: 50px;
+}
+
+#contato .campo {
+    width: 80%;
+
+    margin: 0 auto;
+    padding: 60px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+
+    background-color: #210F59;
+}
+
+.campo {
+    font-family: "Coolvetica-cond";
+    font-size: 60px;
+
+    color: white;
+}
+
+.campo button {
+    background-color: #73DBB8;
+    width: 40%;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+.campo button .elementos {
+    display: flex;
+    justify-content: center;
+
+    color: white;
+}
+
+.campo button .elementos p {
+    font-family: "Coolvetica-cond";
+    font-size: 35px;
+
+    margin-left: 10px;
+
+}
+
+/* footer */
+
+footer {
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    background-color: #210F59;
+}
+
+footer .container-grid {
+    height: 100%;
+}
+
+.redes-sociais {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.redes-sociais img {
+    height: 80px;
+
+    margin-top: 100px;
+    margin-left: 180px;
+
+    cursor: pointer;
+}
+
+.icones-redes {
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 250px;
+}
+
+.bloco {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.icones-redes p {
+    font-family: "Coolvetica-cond";
+    font-size: 30px;
+
+    color: white;
+
+    margin-left: 10px;
+    margin-left: 30px;
+
+    text-decoration: underline transparent;
+    transition: text-decoration 500ms ease;
+
+    cursor: pointer;
+}
+
+.icones-redes p:hover {
+    text-decoration-color: #73DBB8;
+
+    color: #73DBB8;
+}
+
+.icones-redes svg {
+    color: white;
+
+    text-decoration: underline transparent;
+    transition: text-decoration 500ms ease;
+
+    cursor: pointer;
+}
+
+.icones-redes svg:hover {
+    text-decoration-color: #73DBB8;
+
+    color: #73DBB8;
+}
+
+
+/* ChatBot */
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #2D00F7 0%, #A000F7 100%);
+    --bg-dark: #0a0b1e;
+    --accent-green: #00ffbf;
+    --glass-bg: rgba(16, 20, 45, 0.95);
+}
+
+#chatbot {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+
+}
+
+
+/* Container do Bot */
+#connect-bot-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+}
+
+/* Seu Mascote */
+#bot-launcher {
+    width: 100px;
+    height: 100px;
+    background: var(--bg-dark);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(45, 0, 247, 0.5);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    border: 2px solid var(--accent-green);
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+}
+
+#bot-launcher:active {
+    transform: scale(0.95);
+}
+
+#bot-launcher img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #00ff00;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 2px solid var(--bg-dark);
+    animation: pulse 2s infinite;
+}
+
+/* Janela do Chat (Seu Design) */
+#chat-window {
+    display: none;
+    width: 500px;
+    height: 500px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    bottom: 120px;
+    right: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideUp 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.chat-header {
+    background: var(--primary-gradient);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.header-info p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.avatar-small {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.avatar-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: #2D00F7 transparent;
+}
+
+/* Input Area (Adicionado para poder digitar) */
+.chat-input-area {
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#user-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    outline: none;
+    font-size: 16px;
+}
+
+#send-btn {
+    background: var(--accent-green);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mensagens */
+.msg {
+    max-width: 85%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+.msg-bot {
+    background: #1f2442;
+    color: #e0e0e0;
+    border-bottom-left-radius: 4px;
+    align-self: flex-start;
+    border: 1px solid rgba(45, 0, 247, 0.3);
+}
+
+.msg-user {
+    background: var(--accent-green);
+    color: #0a0b1e;
+    border-bottom-right-radius: 4px;
+    align-self: flex-end;
+    font-weight: 700;
+}
+
+.typing-indicator {
+    font-size: 12px;
+    color: #aaa;
+    margin-left: 20px;
+    display: none;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* RESPONSIVIDADE */
+
+/* footer */
+
+.container-grid {
+    width: 100%;
+    /* Usar 100% em vez de 100vw para evitar problemas de scroll horizontal */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* ================================
+    RESPOSIVIDADE GERAL
+================================ */
+
+@media (max-width: 1600px) {
+    .menu img {
+        margin-left: 80px;
+    }
+
+    .secao {
+        gap: 160px;
+        margin-right: 80px;
+    }
+
+    .sobre-container {
+        gap: 1px;
+    }
+
+    .container-cards {
+        margin: 0 200px;
+    }
+
+    .dados {
+        margin: 0 150px;
+    }
+
+    #banner-serviços img {
+        width: 100%;
+    }
+
+    #bot-launcher {
+        width: 140px;
+        height: 140px;
+    }
+
+    #chat-window {
+        width: 600px;
+        height: 600px;
+    }
+
+    .avatar-small {
+        width: 80px;
+        height: 80px;
+    }
+
+    .header-info h3 {
+        font-size: 32px;
+    }
+
+    .header-info p {
+        font-size: 24px;
+    }
+
+    .close-btn {
+
+        font-size: 50px;
+    }
+
+    #send-btn {
+
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .msg {
+        font-size: 24px;
+    }
+
+    #user-input {
+        font-size: 24px;
+    }
+
+}
+
+/* 🌍 Telas 1400px */
+@media (max-width: 1400px) {
+  
+    header .container-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        height: auto;
+    }
+
+    .menu img {
+        margin-right: 100px;
+    }
+
+    .secao {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 15px;
+        gap: 80px;
+        font-size: 28px;
+    }
+
+    .sobre-texto {
+        text-align: center;
+    }
+
+    .sobre-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .sobre-texto h2 {
+        width: 60%;
+        margin-left: 265px;
+    }
+
+    .sobre-texto p {
+        width: 100%;
+        font-size: 28px;
+    }
+
+    .bolas {
+        display: none;
+    }
+    
+    .dados {
+        margin: 0 80px;
+    }
+
+    #bot-launcher {
+        width: 120px;
+        height: 120px;
+    }
+
+    #chat-window {
+        width: 550px;
+        height: 550px;
+    }
+
+    .avatar-small {
+        width: 60px;
+        height: 60px;
+    }
+
+    .header-info h3 {
+        font-size: 28px;
+    }
+
+    .header-info p {
+        font-size: 18px;
+    }
+
+    .close-btn {
+
+        font-size: 40px;
+    }
+
+    #send-btn {
+
+        width: 50px;
+        height: 50px;
+    }
+
+    .msg {
+        font-size: 18px;
+    }
+
+    #user-input {
+        font-size: 18px;
+    }
+
+}
+
+/* 🌍 Telas 1200px */
+@media (max-width: 1200px) {
+    header body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        height: auto;
+    }
+
+    .menu img {
+        margin-right: 150px;
+    }
+
+    .secao {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 15px;
+        gap: 80px;
+        font-size: 28px;
+    }
+
+    .sobre-texto {
+        text-align: center;
+    }
+
+    .sobre-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .sobre-texto h2 {
+        width: 60%;
+        margin-left: 265px;
+    }
+
+    .sobre-texto p {
+        width: 60%;
+        margin-left: 50px;
+    }
+
+    .bolas {
+        display: none;
+    }
+
+    .sobre-texto p {
+        width: 100%;
+        font-size: 28px;
+    }
+
+    .container-cards {
+        gap: 60px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .dados {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .container-cards2 {
+        gap: 60px;
+    }
+
+    #bot-launcher {
+        width: 120px;
+        height: 120px;
+    }
+
+    #chat-window {
+        width: 450px;
+        height: 450px;
+    }
+
+    .avatar-small {
+        width: 60px;
+        height: 60px;
+    }
+
+    .header-info h3 {
+        font-size: 24px;
+    }
+
+    .header-info p {
+        font-size: 16px;
+    }
+
+    .close-btn {
+
+        font-size: 40px;
+    }
+
+    #send-btn {
+
+        width: 45px;
+        height: 45px;
+    }
+
+    .msg {
+        font-size: 16px;
+    }
+
+    #user-input {
+        font-size: 16px;
+    }
+
+}
+
+/* 📱 Telas 992px */
+@media (max-width: 1000px) {
+
+    .menu {
+        height: auto;
+    }
+
+    .secao a {
+        font-size: 24px;
+    }
+
+    .sobre-texto h2 {
+        font-size: 70px;
+    }
+
+    .sobre-texto p {
+        font-size: 26px;
+    }
+
+    .sobre-texto h2 {
+        width: 60%;
+        margin-left: 265px;
+    }
+
+    .sobre-texto p {
+        width: 60%;
+        margin-left: 50px;
+    }
+
+
+    .dados h1 {
+        font-size: 50px;
+    }
+
+    .dados p {
+        font-size: 28px;
+    }
+
+    #contato h2 {
+        font-size: 70px;
+    }
+
+    #contato .campo {
+        width: 80%;
+        padding: 40px;
+    }
+
+    #bot-launcher {
+        width: 80px;
+        height: 80px;
+    }
+
+    #chat-window {
+        width: 350px;
+        height: 350px;
+    }
+
+    .avatar-small {
+        width: 30px;
+        height: 30px;
+    }
+
+    .header-info h3 {
+        font-size: 20px;
+    }
+
+    .header-info p {
+        font-size: 12px;
+    }
+
+    .close-btn {
+
+        font-size: 40px;
+    }
+
+    #send-btn {
+
+        width: 30px;
+        height: 30px;
+    }
+
+    .msg {
+        font-size: 12px;
+    }
+
+    #user-input {
+        font-size: 12px;
+    }
+
+}
+
+/* 📱 Telas 768px */
+@media (max-width: 800px) {
+
+    .sobre-texto h2 {
+        width: 70%;
+        margin-left: 145px;
+    }
+
+    .sobre-texto p {
+        width: 70%;
+        margin-left: 150px;
+    }
+
+    .secao {
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .carousel {
+        margin-top: 10px;
+    }
+
+    .dados div {
+        width: 100%;
+    }
+
+    #contato h2 {
+        font-size: 55px;
+    }
+
+    .campo button {
+        width: 50%;
+    }
+
+    footer .redes-sociais {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .redes-sociais img {
+        margin: 40px 0 0 0;
+    }
+
+    .icones-redes {
+        margin: 0;
+        align-items: center;
+    }
+
+    #bot-launcher {
+        width: 80px;
+        height: 80px;
+    }
+
+    #chat-window {
+        width: 350px;
+        height: 350px;
+    }
+
+    .avatar-small {
+        width: 20px;
+        height: 20px;
+    }
+
+    .header-info h3 {
+        font-size: 16px;
+    }
+
+    .header-info p {
+        font-size: 10px;
+    }
+
+    .close-btn {
+
+        font-size: 40px;
+    }
+
+    #send-btn {
+
+        width: 20px;
+        height: 20px;
+    }
+
+    .msg {
+        font-size: 10px;
+    }
+
+    #user-input {
+        font-size: 10px;
+    }
+
+
+}
+
+/* 📱 Telas 600px */
+@media (max-width: 600px) {
+
+    .sobre-container {
+        text-align: center;
+    }
+
+    .sobre-texto h2 {
+        width: 70%;
+    }
+
+    .sobre-texto {
+        text-align: center;
+    }
+
+    .sobre-texto p {
+        width: 70%;
+    }
+
+    nav a {
+        font-size: 20px;
+    }
+
+    .sobre-texto h2 {
+        font-size: 55px;
+    }
+
+    /* Somente para os cards de #cases-iniciais */
+
+    /* Ajusta apenas o container dessa seção */
+    #cases-iniciais .container-cards {
+        display: flex;
+        flex-direction: column;
+        /* empilha */
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+
+    /* Ajusta SOMENTE os dois cards dessa seção */
+    #cases-iniciais .qualidade,
+    #cases-iniciais .confiança {
+        width: 90%;
+        max-width: 380px;
+        margin: 0 auto;
+        height: auto;
+        /* evita distorcer */
+        padding-bottom: 120px;
+        /* mantém estética */
+    }
+
+    /* SVG dentro desses cards */
+    #cases-iniciais .qualidade svg,
+    #cases-iniciais .confiança svg {
+        margin-top: 80px;
+        /* ajusta no mobile */
+        width: 50%;
+        height: auto;
+    }
+
+    /* Texto hover desses cards */
+    #cases-iniciais .hover-text {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+
+    #avaliação h2 {
+        font-size: 55px;
+    }
+
+    #contato h2 {
+        font-size: 45px;
+    }
+
+    .campo {
+        font-size: 40px;
+        padding: 30px;
+    }
+
+    .campo button .elementos p {
+        font-size: 28px;
+    }
+
+    .campo button {
+        width: 80%;
+    }
+
+    #bot-launcher {
+        width: 80px;
+        height: 80px;
+    }
+
+    #chat-window {
+        width: 350px;
+        height: 350px;
+    }
+
+    .avatar-small {
+        width: 20px;
+        height: 20px;
+    }
+
+    .header-info h3 {
+        font-size: 16px;
+    }
+
+    .header-info p {
+        font-size: 10px;
+    }
+
+    .close-btn {
+
+        font-size: 40px;
+    }
+
+    #send-btn {
+
+        width: 40px;
+        height: 40px;
+    }
+
+    .msg {
+        font-size: 10px;
+    }
+
+    #user-input {
+        font-size: 10px;
+    }
+
+}
+
+/* 📱 Telas 480px */
+@media (max-width: 480px) {
+
+    .sobre-container {
+        text-align: center;
+    }
+
+    .sobre-texto {
+        text-align: center;
+    }
+
+    .sobre-texto h2 {
+        width: 70%;
+    }
+
+    .sobre-texto p {
+        width: 70%;
+    }
+
+    .menu img {
+        margin-left: 60px;
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .secao {
+        margin-left: 50px;
+        gap: 20px;
+        font-size: 16px;
+    }
+
+    .sobre-texto h2 {
+        font-size: 45px;
+    }
+
+    .sobre-texto p {
+        font-size: 22px;
+    }
+
+
+    .dados div {
+        width: 100%;
+    }
+
+    #contato h2 {
+        font-size: 40px;
+    }
+
+    .campo {
+        width: 90%;
+        font-size: 30px;
+    }
+
+    .campo button .elementos p {
+        font-size: 24px;
+    }
+
+    footer .redes-sociais img {
+        height: 60px;
+    }
+
+    .icones-redes p {
+        font-size: 24px;
+    }
+
+    #bot-launcher {
+        width: 60px;
+        height: 60px;
+    }
+
+    #chat-window {
+        width: 350px;
+        height: 350px;
+    }
+
+    .avatar-small {
+        width: 20px;
+        height: 20px;
+    }
+
+    .header-info h3 {
+        font-size: 16px;
+    }
+
+    .header-info p {
+        font-size: 10px;
+    }
+
+    .close-btn {
+
+        font-size: 40px;
+    }
+
+    #send-btn {
+
+        width: 40px;
+        height: 40px;
+    }
+
+    .msg {
+        font-size: 10px;
+    }
+
+    #user-input {
+        font-size: 10px;
+    }
+
 }
