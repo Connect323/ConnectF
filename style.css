@@ -1169,6 +1169,10 @@ footer .container-grid {
         font-size: 28px;
     }
 
+    .sobre-texto {
+        text-align: center;
+    }
+    
     .sobre-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1176,10 +1180,12 @@ footer .container-grid {
 
     .sobre-texto h2 {
         width: 60%;
+        margin-left: 265px;
     }
 
     .sobre-texto p {
         width: 60%;
+        margin-left: 50px;
     }
 
     .bolas { display: none; }
@@ -1251,18 +1257,6 @@ footer .container-grid {
     .sobre-texto h2 { font-size: 70px; }
     .sobre-texto p { font-size: 26px; }
 
-    .sobre-container{
-        text-align: center;
-    }
-    
-    .sobre-texto h2 {
-        width: 70%;
-    }
-
-    .sobre-texto p {
-        width: 70%;
-    }
-
     .dados h1 { font-size: 50px; }
     .dados p { font-size: 28px; }
 
@@ -1319,16 +1313,14 @@ footer .container-grid {
 /* 📱 Telas 768px */
 @media (max-width: 800px) {
 
-    .sobre-container{
-        text-align: center;
-    }
-    
     .sobre-texto h2 {
         width: 70%;
+        margin-left: 145px;
     }
 
     .sobre-texto p {
         width: 70%;
+        margin-left: 150px;
     }
 
     .secao {
@@ -1409,6 +1401,10 @@ footer .container-grid {
     
     .sobre-texto h2 {
         width: 70%;
+    }
+
+    .sobre-texto {
+        text-align: center;
     }
 
     .sobre-texto p {
@@ -1521,6 +1517,10 @@ footer .container-grid {
 @media (max-width: 480px) {
 
     .sobre-container{
+        text-align: center;
+    }
+
+    .sobre-texto {
         text-align: center;
     }
     
