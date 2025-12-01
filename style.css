@@ -1257,6 +1257,17 @@ footer .container-grid {
     .sobre-texto h2 { font-size: 70px; }
     .sobre-texto p { font-size: 26px; }
 
+    .sobre-texto h2 {
+        width: 60%;
+        margin-left: 265px;
+    }
+
+    .sobre-texto p {
+        width: 60%;
+        margin-left: 50px;
+    }
+
+    
     .dados h1 { font-size: 50px; }
     .dados p { font-size: 28px; }
 
