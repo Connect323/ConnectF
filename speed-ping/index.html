@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed - Teste de Velocidade de Conexão</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Tela de Introdução -->
+    <div id="introScreen" class="screen active">
+        <div class="intro-container">
+            <div class="logo-connect">
+                <div class="logo-circle"></div>
+                <h1>CONNECT</h1>
+            </div>
+            <p class="intro-subtitle">Teste de Velocidade de Conexão</p>
+            <p class="intro-version">Speed</p>
+        </div>
+    </div>
+
+    <!-- Tela Principal do Jogo -->
+    <div id="gameScreen" class="screen">
+        <div class="game-container">
+            <!-- HUD Animado -->
+            <div class="hud-display" id="hudDisplay">◆ SISTEMA ATIVO | MEDINDO VELOCIDADE</div>
+
+            <!-- Logo Connect no canto superior direito -->
+            <div class="logo-small">
+                <span>CONNECT</span>
+            </div>
+
+            <!-- Círculo Central de Conexão -->
+            <div class="game-content">
+                <div id="statusCircle" class="status-circle red">
+                    <div class="circle-inner">
+                        <p id="statusText">Clique para iniciar o teste</p>
+                    </div>
+                </div>
+
+                <!-- Botão SPEED -->
+                <button id="speedButton" class="speed-button">
+                    <span class="button-text">SPEED!</span>
+                </button>
+
+                <!-- Partículas de Fundo -->
+                <div id="particleContainer" class="particle-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Resultado -->
+    <div id="resultScreen" class="screen">
+        <div class="result-container">
+            <div class="result-content">
+                <h2 class="result-title">Resultado</h2>
+                
+                <!-- Métrica de Velocidade -->
+                <div class="speed-metric">
+                    <p class="metric-label">Velocidade de Conexão</p>
+                    <p id="speedValue" class="speed-value">0 ms</p>
+                </div>
+
+                <!-- Feedback de Conectividade -->
+                <p id="feedbackMessage" class="feedback-message"></p>
+
+                <!-- Ranking Local -->
+                <div class="ranking-section">
+                    <h3>Top 5 Melhores Velocidades</h3>
+                    <ul id="rankingList" class="ranking-list">
+                        <!-- Preenchido dinamicamente -->
+                    </ul>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="action-buttons">
+                    <button id="playAgainButton" class="btn btn-primary">Novo Teste</button>
+                    <button onclick="history.back()" class="btn btn-secondary">Conheça a connect</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/audio.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Connect-2",
+			"path": "."
+		},
+		{
+			"name": "speed-ping",
+			"path": "../home/ubuntu/speed-ping"
+		}
+	],
+	"settings": {}
+}
