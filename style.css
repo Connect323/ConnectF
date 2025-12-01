@@ -1251,12 +1251,16 @@ footer .container-grid {
     .sobre-texto h2 { font-size: 70px; }
     .sobre-texto p { font-size: 26px; }
 
+    .sobre-container{
+        text-align: center;
+    }
+    
     .sobre-texto h2 {
-        width: 60%;
+        width: 70%;
     }
 
     .sobre-texto p {
-        width: 60%;
+        width: 70%;
     }
 
     .dados h1 { font-size: 50px; }
@@ -1315,12 +1319,16 @@ footer .container-grid {
 /* 📱 Telas 768px */
 @media (max-width: 800px) {
 
+    .sobre-container{
+        text-align: center;
+    }
+    
     .sobre-texto h2 {
-        width: 60%;
+        width: 70%;
     }
 
     .sobre-texto p {
-        width: 60%;
+        width: 70%;
     }
 
     .secao {
@@ -1395,12 +1403,16 @@ footer .container-grid {
 /* 📱 Telas 600px */
 @media (max-width: 600px) {
 
+    .sobre-container{
+        text-align: center;
+    }
+    
     .sobre-texto h2 {
-        width: 60%;
+        width: 70%;
     }
 
     .sobre-texto p {
-        width: 60%;
+        width: 70%;
     }
     nav a { font-size: 20px; }
 
@@ -1508,12 +1520,16 @@ footer .container-grid {
 /* 📱 Telas 480px */
 @media (max-width: 480px) {
 
+    .sobre-container{
+        text-align: center;
+    }
+    
     .sobre-texto h2 {
-        width: 60%;
+        width: 70%;
     }
 
     .sobre-texto p {
-        width: 60%;
+        width: 70%;
     }
 
     .menu img {
